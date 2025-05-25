@@ -23,6 +23,26 @@ system will be useful to some people in its current form and that any bugs
 in the current implementation might be found now, allowing us to correct
 them before the book is final.
 
+Quick Start
+-----------
+After (recursively) cloning and `cd`-ing into the repo:
+```bash
+mkdir build
+cd build 
+cmake .. -DCMAKE_BUILD_TYPE=Release 
+cmake --build . 
+```
+This will make a `pbrt` executable in the `build` directory that you can use for rendering:
+```bash
+./pbrt scene.pbrt
+```
+The SPP, integrator and such are defined in the scene file. By default the output will be stored in the directory the executable is in. If you want to define a different output location & filename do:
+
+```bash
+./pbrt scene.pbrt --outfile /path/to/outputs/output_name.exr"
+```
+
+
 Resources
 ---------
 
