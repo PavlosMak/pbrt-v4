@@ -29,18 +29,34 @@ After (recursively) cloning and `cd`-ing into the repo:
 ```bash
 mkdir build
 cd build 
-cmake .. -DCMAKE_BUILD_TYPE=Release 
+
+# make debug directory and compile debug build
+mkdir debug
+cd debug
+cmake ../.. -DCMAKE_BUILD_TYPE=Debug
+cmake --build . 
+cd ..
+
+# make release directory and compile release build 
+mkdir release
+cd release
+cmake ../.. -DCMAKE_BUILD_TYPE=Release 
 cmake --build . 
 ```
-This will make a `pbrt` executable in the `build` directory that you can use for rendering:
+This will make debug and release `pbrt` executables you can use for rendering e.g:
 ```bash
-./pbrt scene.pbrt
+./release/pbrt scene.pbrt
 ```
-The SPP, integrator and such are defined in the scene file. By default the output will be stored in the directory the executable is in. If you want to define a different output location & filename do:
-
+The SPP, integrator and such are defined in the scene. By default the output will be stored in the working directory. If you want to define a different output location & filename do:
 ```bash
 ./pbrt scene.pbrt --outfile /path/to/outputs/output_name.exr"
 ```
+
+For debugging it can be useful to run with a single-thread:
+```bash
+./pbrt scene.pbrt --nthreads 1 
+```
+There are example debug and release configuration for VS Code in the `.vscode` directory. You need to change the program directories to point to the corresponding executable. You can then set breakpoints in the editor and press `F5` to begin debugging. Alternatively you can run the `PBRT Release configuration`. Both have the root of this repository set as workdirectory.
 
 
 Resources
