@@ -6,7 +6,8 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/debug/pbrt",
-      "args": ["test_scenes/lte-orb/lte-orb-simple-ball.pbrt", "--nthreads", "1"],  // Adjust as needed
+      // "args": ["test_scenes/lte-orb/lte-orb-simple-ball.pbrt", "--nthreads", "1"],  // Adjust as needed
+      "args": ["test_scenes/lte-orb/lte-orb-simple-ball.pbrt"],  // Adjust as needed
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

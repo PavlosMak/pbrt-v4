@@ -12,6 +12,8 @@ Camera "perspective"
 Sampler "halton"
     "integer pixelsamples" [ 10 ]
 
+Integrator "randomwalk"
+
 WorldBegin
 
 AttributeBegin
